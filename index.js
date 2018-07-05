@@ -18,6 +18,7 @@ const printBoard = () => {
 
 const getInput = player => async () => {
   const { turn } = game.getState();
+  console.log('turn', turn);
   if (turn !== player) return;
   const ans = await inquirer.prompt([
     {
@@ -31,7 +32,7 @@ const getInput = player => async () => {
 };
 
 // Debug: Print the state
-// game.subscribe(() => console.log(game.getState()))
+game.subscribe(() => console.log(game.getState()));
 
 game.subscribe(printBoard);
 game.subscribe(getInput('X'));
