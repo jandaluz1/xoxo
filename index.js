@@ -17,7 +17,6 @@ const printBoard = () => {
 };
 
 const getInput = player => async () => {
-  console.log('Hitting getInput');
   const { turn } = game.getState();
   if (turn !== player) return;
   const ans = await inquirer.prompt([
